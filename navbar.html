@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<!-- Fixed navbar template from bootstrap https://getbootstrap.com/docs/4.0/components/navbar/-->
+<nav class="navbar navbar-expand-lg navbar fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="basepage.html">Speedrunning</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,19 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="basepage.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">What is Speedrunning</a>
+          <a class="nav-link text-white" href="#">Game archive</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Super Meat Boy
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-white" href="#">Super Meat Boy</a></li>
-            <li><a class="dropdown-item text-white" href="#">Levels</a></li>
-          </ul>
+          <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-white" href="#">World 1 Levels</a>
+            <a class="dropdown-item text-white" href="#">Boss Fights</a>
+          </div>
+         
         </li>
       </ul>
     </div>
@@ -27,6 +26,23 @@
 </nav>
 
 
+ 
+<!--
+  <ul class="dropdown-menu bg-dark">
+            <li><div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Levels
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+              </div>
+            </div></li>
+            
+          </ul>
+-->
+
+
+<!-- <nav class="navbar fixed-top navbar-light bg-light"></nav> -->
 
 <!--
   <nav class="navbar navbar-dark" style="background-color: #1d3557;">
@@ -47,3 +63,9 @@
     </div>
   </nav>
   -->
+
+
+
+
+
+  
