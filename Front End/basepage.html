@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="clientside.js"></script>
+
+
+    <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!--Code used from this article: https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages-->
+    <script>
+      $(function(){
+        $("#navbar-placeholder").load("navbar.html");
+      });
+    </script>
+
+    <!-- W3C said these were bad "error"-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <title>Speedrunning - mainpage</title>
+
+    
+    
+    <style>
+      body { background-image: url(images/gif\ test.gif) !important; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        background-size: cover;
+      } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */ 
+      .dropdown:hover .dropdown-menu { /* drop down hover from https://stackoverflow.com/questions/16214326/bootstrap-dropdown-with-hover */
+        display: block;
+        margin-top: 0; 
+        
+      }
+      .dropdown-item:focus, .dropdown-item:hover { /* change color from https://mdbootstrap.com/support/general/navbar-dropdown-color-scheme-and-highlighted-items/ */
+        background-color: darkred !important;
+      }
+      .btn-outline-red:hover{
+        background-color: darkred !important;
+      }
+      .btn
+      {
+        color:white !important;
+      }
+      
+    </style>
+
+    
+    <!--End of code form stackoverflow -->
+  </head>
+
+  
+
+  <body class = "text-white">
+    <div id="navbar-placeholder"></div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            
+          
+            <hr>
+            <hr>
+              <h1 class="container display-1" >What is Speedrunning</h1>
+            
+          
+            
+            
+
+            <hr>
+            <p>
+              Test test
+            </p>
+            
+            <hr>
+      
+            
+
+            <!-- bootstrap button template https://getbootstrap.com/docs/5.0/components/buttons/ -->
+            <div class="d-grid gap-2">
+              <button id= "l1" onclick = "l1()" class="btn btn-outline-red" type="button">Level 1</button>
+              <div id="l1content" style="display: none;">
+                <!-- Bootstrap Carousel template https://getbootstrap.com/docs/4.0/components/carousel/ -->
+                <div id="c1" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_1_part_1.png" alt="image of first level of super meat boy, meat boy is at the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position, look left</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_1_part_2.png" alt="image of first level of super meat boy, meat boy is on the left wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the left wall and get ready to jump off it imediately</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_1_part_3.png" alt="image of first level of super meat boy, meat boy is mid air">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall, hold right and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position, look left</p>
+                <p>2. Jump to the left wall and get ready to jump off it imediately</p>
+                <p>3. Jump off the left wall, hold right and land on Bandage Girl</p>
+                <hr>
+                
+              </div>
+
+              
+              <button onclick = "l2()" class="btn btn-outline-red" type="button">Level 2</button>
+              <div id="l2content" style="display: none;">
+                <div id="c2" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_2_part_1.png" alt="image of second level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_2_part_2.png" alt="image of second level of super meat boy, meat boy is on the the wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto the left wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_2_part_3.png" alt="image of second level of super meat boy, meat boy is on the right wall in the center of the stage">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto the centeral wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_2_part_4.png" alt="image of second level of super meat boy, meat boy is on the upper right wall in the center of the stage">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Hold right and jump to land on the small wall above, then slide up the wall and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position</p>
+                <p>2. Jump onto the left wall</p>
+                <p>3. Jump onto the centeral wall</p>
+                <p>4. Hold right and jump to land on the small wall above, then slide up the wall and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+              <button onclick = "l3()" class="btn btn-outline-red" type="button">Level 3</button>
+              <div id="l3content" style="display: none;">
+                <div id="c3" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_3_part_1.png" alt="image of third level of super meat boy, meat boy is at the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_3_part_2.png" alt="image of third level of super meat boy, meat boy is mid air">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the right</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_3_part_3.png" alt="image of third level of super meat boy, meat boy is on the right side">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position</p>
+                <p>2. Jump to the right</p>
+                <p>3. Land on Bandage Girl</p>
+                <hr>
+              </div>
+
+              <button onclick = "l4()" class="btn btn-outline-red" type="button">Level 4</button>
+              <div id="l4content" style="display: none;">
+                <div id="c4" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_4_part_1.png" alt="image of forth level of super meat boy, meat boy is at the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_4_part_2.png" alt="image of forth level of super meat boy, meat boy is half way through the level">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump up the walls with as little contact time as possible until you reach this point</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_4_part_3.png" alt="image of forth level of super meat boy, meat boy is close to the end">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Use the auto-jump glitch, don't press any buttons until you are close to Bandage girl, then canncel auto-jump and jump to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c4" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c4" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position</p>
+                <p>2. Jump up the walls with as little contact time as possible until you reach this point</p>
+                <p>3. Use the auto-jump glitch, don't press any buttons until you are close to Bandage girl, then canncel auto-jump and jump to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+
+              <button onclick = "l5()" class="btn btn-outline-red" type="button">Level 5</button>
+              <div id="l5content" style="display: none;">
+                <div id="c5" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c5" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_5_part_1.png" alt="image of fifth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">As soon as the level loads, use the auto-jump glitch and jump of this position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_5_part_2.png" alt="image of fifth level of super meat boy, meat boy is on the the wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Hold right for one jump, then let go and glide upwards until there is no longer a wall on your left, then hold right</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_5_part_3.png" alt="image of fifth level of super meat boy, meat boy is on the right wall in the center of the stage">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump on the right wall, then left, then right</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_5_part_4.png" alt="image of fifth level of super meat boy, meat boy is on the upper right wall in the center of the stage">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Finally jump on the small wall above the portal, hold right and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c5" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c5" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. As soon as the level loads, use the auto-jump glitch and jump of this position</p>
+                <p>2. Hold right for one jump, then let go and glide upwards until there is no longer a wall on your left, then hold right</p>
+                <p>3. Jump on the right wall, then left, then right</p>
+                <p>4. Finally jump on the small wall above the portal, hold right and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l6()" class="btn btn-outline-red" type="button">Level 6</button>
+              <div id="l6content" style="display: none;">
+                <div id="c6" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c6" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c6" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#c6" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_6_part_1.png" alt="image of sixth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_6_part_2.png" alt="image of sixth level of super meat boy, meat boy is on the right near to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto the right wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_6_part_3.png" alt="image of sixth level of super meat boy, meat boy is on the second floor">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Land past the sawblade</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_6_part_4.png" alt="image of sixth level of super meat boy, meat boy is on the third floor">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall and land as quickly as possible</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_6_part_5.png" alt="image of sixth level of super meat boy, meat boy is above the saw blade next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the right wall, jump over the saw blade and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c6" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c6" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Jump onto the right wall</p>
+                <p>3. Jump on the right wall, then left, then right</p>
+                <p>4. Jump off the left wall and land as quickly as possible</p>
+                <p>5. Jump off the right wall, over the saw blade and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+              <button onclick = "l7()" class="btn btn-outline-red" type="button">Level 7</button>
+              <div id="l7content" style="display: none;">
+                <div id="c7" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c7" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c7" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c7" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c7" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_7_part_1.png" alt="image of seventh level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_7_part_2.png" alt="image of seventh level of super meat boy, meat boy is on the right wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto right wall and scale it</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_7_part_3.png" alt="image of seventh level of super meat boy, meat boy above the saw blade above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump over the saw blade and run right</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_7_part_4.png" alt="image of seventh level of super meat boy, meat boy is next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump accross the gap and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c7" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c7" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Jump onto right wall and scale it</p>
+                <p>3. Jump over the saw blade and run right</p>
+                <p>4. Jump accross the gap and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l8()" class="btn btn-outline-red" type="button">Level 8</button>
+              <div id="l8content" style="display: none;">
+                <div id="c8" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c8" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c8" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c8" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_8_part_1.png" alt="image of eighth level of super meat boy, meat boy is at the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position, look left</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_8_part_2.png" alt="image of eighth level of super meat boy, meat boy is on the left wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto left wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_8_part_3.png" alt="image of eighth level of super meat boy, meat boy is mid air">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump right over the wall and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c8" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c8" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position, look left</p>
+                <p>2. Jump onto left wall</p>
+                <p>3. Jump right over the wall and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l9()" class="btn btn-outline-red" type="button">Level 9</button>
+              <div id="l9content" style="display: none;">
+                <div id="c9" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c9" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c9" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c9" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c9" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#c9" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_9_part_1.png" alt="image of ninth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_9_part_2.png" alt="image of ninth level of super meat boy, meat boy is on the far right wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto the right wall, be fast as the blocks crumble when touched</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_9_part_3.png" alt="image of ninth level of super meat boy, meat boy is on the second floor">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Land as close to the edge as possible</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_9_part_4.png" alt="image of ninth level of super meat boy, meat boy is on left wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Scale the wall by jumping from one wall to the other</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_9_part_5.png" alt="image of ninth level of super meat boy, meat boy is next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall at the end and run to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c9" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c9" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Jump onto the right wall, be fast as the blocks crumble when touched</p>
+                <p>3. Land as close to the edge as possible</p>
+                <p>4. Scale the wall by jumping from one wall to the other</p>
+                <p>5. Jump off the left wall at the end and run to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l10()" class="btn btn-outline-red" type="button">Level 10</button>
+              <div id="l10content" style="display: none;">
+                <div id="c10" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c10" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c10" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c10" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c10" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_10_part_1.png" alt="image of tenth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_10_part_2.png" alt="image of tenth level of super meat boy, meat boy is on the centeral wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump onto right wall, wait half a second, then jump off it whilst holding right</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_10_part_3.png" alt="image of tenth level of super meat boy, meat boy is on the right wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the right wall and jump up it </span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_10_part_4.png" alt="image of tenth level of super meat boy, meat boy is on the centeral wall on the second floor">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump left onto the next breakable wall and do the same as the first wall, then run to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c10" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c10" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Jump onto right wall, wait half a second, then jump off it whilst holding right</p>
+                <p>3. Jump to the right wall and jump up it</p>
+                <p>4. Jump left onto the next breakable wall and do the same as the first wall, then run to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l11()" class="btn btn-outline-red" type="button">Level 11</button>
+              <div id="l11content" style="display: none;">
+                <div id="c11" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c11" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c11" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c11" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c11" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#c11" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_11_part_1.png" alt="image of eleventh level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">As soon as the level loads, use the auto-jump glitch and jump to the left wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_11_part_2.png" alt="image of eleventhlevel of super meat boy, meat boy is on the left wall next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Land on this part of the wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_11_part_3.png" alt="image of eleventh level of super meat boy, meat boy is on a breakable wall above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Hold right and jump of the breakable wall and slanted wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_11_part_4.png" alt="image of eleventh level of super meat boy, meat boy is on right breakable wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Continue holding right and jump of the top of the next breakable wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_11_part_5.png" alt="image of ninth level of super meat boy, meat boy is next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Deactivate auto-jump, do a small jump of the final wall and land on Badgae Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c11" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c11" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. As soon as the level loads, use the auto-jump glitch and jump to the left wall</p>
+                <p>2. Land on this part of the wall</p>
+                <p>3. Hold right and jump of the breakable wall and slanted wall</p>
+                <p>4. Continue holding right and jump of the top of the next breakable wall</p>
+                <p>5. Deactivate auto-jump, do a small jump of the final wall and land on Badgae Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l12()" class="btn btn-outline-red" type="button">Level 12</button>
+              <div id="l12content" style="display: none;">
+                <div id="c12" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c12" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c12" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c12" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c12" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_12_part_1.png" alt="image of twelfth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_12_part_2.png" alt="image of twelfth level of super meat boy, meat boy is a small ledge next to the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Run off the start position and imediately jump off the wall below</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_12_part_3.png" alt="image of twelfth level of super meat boy, meat boy is on the left wall above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Hold right until you are close to the saw blade, then hold left so you slide on the left wall </span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_12_part_4.png" alt="image of twelfth level of super meat boy, meat boy is next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall and run to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c12" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c12" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Run off the start position and imediately jump off the wall below</p>
+                <p>3. Hold right until you are close to the saw blade, then hold left so you slide on the left wall</p>
+                <p>4. Jump off the left wall and run to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l13()" class="btn btn-outline-red" type="button">Level 13</button>
+              <div id="l13content" style="display: none;">
+                <div id="c13" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c13" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c13" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c13" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c13" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_13_part_1.png" alt="image of thirteenth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_13_part_2.png" alt="image of thirteenth level of super meat boy, meat boy is above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the right wall and land above</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_13_part_3.png" alt="image of thirteenth level of super meat boy, meat boy is on the second floor above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the second right wall and land above next to the saw blade </span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_13_part_4.png" alt="image of thirteenth level of super meat boy, meat boy is next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall and run to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c13" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c13" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Jump off the right wall and land above</p>
+                <p>3. Jump off the second right wall and land above next to the saw blade</p>
+                <p>4. Jump off the left wall and run to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l14()" class="btn btn-outline-red" type="button">Level 14</button>
+              <div id="l14content" style="display: none;">
+                <div id="c14" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c14" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c14" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c14" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c14" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_14_part_1.png" alt="image of fourteenth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_14_part_2.png" alt="image of fourteenth level of super meat boy, meat boy is above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Scale the wall by jumping from wall to wall as soon as you touch the wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_14_part_3.png" alt="image of fourteenth level of super meat boy, meat boy is on the centeral wall above the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall and wrap around to the left side of the centeral wall </span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_14_part_4.png" alt="image of fourteenth level of super meat boy, meat boy is on the right wall next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump off the left wall, then jump off the right wall and land on Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c14" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c14" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Scale the wall by jumping from wall to wall as soon as you touch the wall</p>
+                <p>3. Jump off the left wall and wrap around to the left side of the centeral wall</p>
+                <p>4. Jump off the left wall, then jump off the right wall and land on Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l15()" class="btn btn-outline-red" type="button">Level 15</button>
+              
+                <p id="l15content" style="display: none;">Exit to map after level 14 and skip level 15, as it is not in the any% route</p>
+                
+              <button onclick = "l16()" class="btn btn-outline-red" type="button">Level 16</button>
+              <div id="l16content" style="display: none;">
+                <div id="c16" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c16" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c16" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c16" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c16" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_16_part_1.png" alt="image of sixteenth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_16_part_2.png" alt="image of sixteenth level of super meat boy, meat boy is below the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Hold right and fall to the bottom</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_16_part_3.png" alt="image of sixteenth level of super meat boy, meat boy is on one of the centeral walls on the left side">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Scale the wall by jumping off the right wall, then the left wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_16_part_4.png" alt="image of sixteenth level of super meat boy, meat boy is on the right wall above Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the right wall, fall to the bottom and then run to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c16" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c16" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Hold right and fall to the bottom</p>
+                <p>3. Scale the wall by jumping off the right wall, then the left wall</p>
+                <p>4. Jump to the right wall, fall to the bottom and then run to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l17()" class="btn btn-outline-red" type="button">Level 17</button>
+              <div id="l17content" style="display: none;">
+                <div id="c17" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c17" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c17" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c17" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#c17" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_17_part_1.png" alt="image of seventeenth level of super meat boy, meat boy is on starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_17_part_2.png" alt="image of seventeenth level of super meat boy, meat boy is above and to the right of the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Scale the right wall by jumping on the right side only and land here</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_17_part_3.png" alt="image of seventeenth level of super meat boy, meat boy is on the furthest right wall">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Scale the further right wall</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_17_part_4.png" alt="image of seventeenth level of super meat boy, meat boy is on the left side of the centeral platform wall next to Bandage Girl">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the left wall, then jump to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c17" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c17" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                  
+                <p>1. Start position</p>
+                <p>2. Scale the right wall by jumping on the right side only and land here</p>
+                <p>3. Scale the further right wall</p>
+                <p>4. Jump to the left wall, then jump to Bandage Girl</p>
+                <hr>
+              </div>
+
+
+              <button onclick = "l18()" class="btn btn-outline-red" type="button">Level 18</button>
+              <div id="l18content" style="display: none;">
+                <div id="c18" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#c18" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#c18" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#c18" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class = "img-fluid" src="images/Levels/Level_18_part_1.png" alt="image of eighteenth level of super meat boy, meat boy is at the starting position">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Start position</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_18_part_2.png" alt="image of eighteenth level of super meat boy, meat boy is on the right platform">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the close platform avoiding the rotating saw blade</span></h5>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class = "img-fluid" src="images/Levels/Level_18_part_3.png" alt="image of eighteenth level of super meat boy, meat boy is on the left platform">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class = "bg-dark">Jump to the far platform avoiding the rotating saw blade, then jump to Bandage Girl</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#c18" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#c18" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                <!-- End of carousel-->
+                <p>1. Start position</p>
+                <p>2. Jump to the close platform avoiding the rotating saw blade</p>
+                <p>3. Jump to the far platform avoiding the rotating saw blade, then jump to Bandage Girl</p>
+                <hr>
+                
+              </div>
+
+
+            </div>
+            
+            <!-- end of button test-->
+            <hr>
+            <a href="#top">Back to top of page</a>
+            <hr>
+          
+          </div>
+        </div>
+      </div>
+  </body>
+  
+</html>
+
+
+
