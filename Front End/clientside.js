@@ -99,3 +99,108 @@ function l18(){
     change();
 }
 
+function b1(){
+    x = document.getElementById("b1content");
+    change();
+}
+
+function b2(){
+    x = document.getElementById("b2content");
+    change();
+}
+
+function b3(){
+    x = document.getElementById("b3content");
+    change();
+}
+
+function b4(){
+    x = document.getElementById("b4content");
+    change();
+}
+
+function b5(){
+    x = document.getElementById("b5content");
+    change();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var curactive = 1;
+var y = document.getElementById("basepage")
+const pages = ["basepage", "gamearchive", "levels", "bosses", "showcase"]
+
+function disable_rest(cur){
+    
+    for (i = 0; i < pages.length; i++) {
+        if(pages[i] != cur){
+            y = document.getElementById(pages[i])
+            y.style.display = "none";
+        }
+    }
+    
+}
+
+function base_page(){
+
+    //how to change background image sourced from https://stackoverflow.com/questions/21496905/how-to-change-the-background-image-of-div-using-javascript
+    document.body.style.backgroundImage = "none"
+    document.body.style.backgroundColor= "rgb(79, 6, 79)"
+    
+    y = document.getElementById("basepage");
+    y.style.display = "block";
+    cur = "basepage"
+    disable_rest(cur);
+}
+
+function game_archive(){
+
+    document.body.style.backgroundImage = "url(images/hollowknightbackground.jpg"
+
+    y = document.getElementById("gamearchive");
+    y.style.display = "block";
+    cur = "gamearchive"
+    disable_rest(cur);
+}
+
+
+function levels(){
+
+    document.body.style.backgroundImage = "url(images/smbgif.gif)"
+
+    y = document.getElementById("levels");
+    y.style.display = "block";
+    cur = "levels"
+    disable_rest(cur);
+}
+
+function bosses(){
+
+    document.body.style.backgroundImage = "url(images/smbgif.gif)"
+
+    y = document.getElementById("bosses");
+    y.style.display = "block";
+    cur = "bosses"
+    disable_rest(cur);
+}
+
+function showcase(){
+
+    document.body.style.backgroundImage = "url(images/smbbackground2.jpg)"
+
+    y = document.getElementById("showcase");
+    y.style.display = "block";
+    cur = "showcase"
+    disable_rest(cur);
+}
+

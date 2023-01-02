@@ -1,22 +1,23 @@
-<!-- Fixed navbar template from bootstrap https://getbootstrap.com/docs/4.0/components/navbar/-->
+<!-- Fixed navbar template from bootstrap https://getbootstrap.com/docs/4.0/components/navbar/ -->
 <nav class="navbar navbar-expand-lg navbar fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="basepage.html">Speedrunning</a>
+    <button class="navbar-brand text-white btn-outline-red bg-dark" onclick="base_page()" type="button"><b>Speedrunning</b></button>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Game archive</a>
+          <button class="nav-link text-white btn-outline-red bg-dark" onclick="game_archive()" type="button">Game archive</button>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Super Meat Boy
           </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-white" href="#">World 1 Levels</a>
-            <a class="dropdown-item text-white" href="#">Boss Fights</a>
+            <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="levels()" type="button">World 1 Levels</button>
+            <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="bosses()" type="button"> Boss Fights</button>
+            <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="showcase()" type="button"> Showcase</button>
           </div>
          
         </li>
