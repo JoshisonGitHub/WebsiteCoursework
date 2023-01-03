@@ -1,0 +1,22 @@
+{
+  "name": "websitecoursework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "clientserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshisonGitHub/WebsiteCoursework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshisonGitHub/WebsiteCoursework/issues"
+  },
+  "homepage": "https://github.com/JoshisonGitHub/WebsiteCoursework#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
