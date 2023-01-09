@@ -10,12 +10,7 @@
     
     <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <!--Code used from this article: https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages-->
-    <script>
-      $(function(){
-        $("#navbar-placeholder").load("navbar.html");
-      });
-    </script>
+    
 
     <!-- W3C said these were bad "error"-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -65,6 +60,21 @@
       .adjust-line-height {
         line-height: 1.5em;
       }
+      .adjust-line-height-large {
+        line-height: 2em;
+      }
+      #textleft{
+        text-align: left;
+      }
+      #textright{
+        text-align: right;
+      }
+      .div-textright{
+        text-align: right;
+      }
+      .div-textleft{
+        text-align: left;
+      }
     </style>
 
     
@@ -74,7 +84,32 @@
   
   
   <body class = "text-white">
-    <div id="navbar-placeholder"></div>
+    <!-- Fixed navbar template from bootstrap https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-brand text-white btn-outline-red bg-dark" onclick="base_page()" type="button"><b>Speedrunning</b></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="nav-link text-white btn-outline-red bg-dark" onclick="game_archive()" type="button">Game archive</button>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Super Meat Boy
+              </a>
+              <div class="dropdown-menu bg-dark" aria-labelledby="navbarNavDropdown">
+                <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="levels()" type="button">World 1 Levels</button>
+                <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="bosses()" type="button"> Boss Fights</button>
+                <button class="dropdown-item text-white btn-outline-red bg-dark" onclick="showcase()" type="button"> Showcase</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
       <div class="container text-center">
         <div class="row">
           <div class="col">
@@ -119,38 +154,60 @@
               <hr>
               <h3 class="container display-4">Still Uncertain?</h3>
               If you are still wondering what game you should speedrun, here are the top 10 most speedrun games:
-              <hr>
-
-              <h6 class="container display-6">1. Subway Surfers</h6>
+              
+              
+              <div class = "div-textright">
+              <h6 class="container display-6 adjust-line-height-large">1. Subway Surfers</h6>
               <img src = "images/subwaysurfer.png" width="700" class="img-fluid" alt="image of subway surfers logo">
-              <hr>
-              <h6 class="container display-6">2. Super Mario 64</h6>
+              </div>
+              
+             
+              <div class = "div-textleft">
+              <h6 class="container display-6 adjust-line-height-large">2. Super Mario 64</h6>
               <img src = "images/super_Mario_64_box_cover.jpg" width="700" class="img-fluid" alt="image of super mario 64 logo">
-              <hr>
-              <h6 class="container display-6">3. Minecraft</h6>
-              <img src = "images/minecraft.jpg" width="700" class="img-fluid" alt="image of minecraft logo">
-              <hr>
-              <h6 class="container display-6">4. Super Mario Odyssey</h6>
-              <img src = "images/super_mario_odyssey.jpg" width="700" class="img-fluid" alt="image of super mario odyssey logo">
-              <hr>
-              <h6 class="container display-6">5. Celeste</h6>
-              <img src = "images/celeste.jpg" width="700" class="img-fluid" alt="image of celeste logo">
-              <hr>
-              <h6 class="container display-6">6. Seterra</h6>
-              <img src = "images/seterra.jpg" width="700" class="img-fluid" alt="image of seterra logo">
-              <hr>
-              <h6 class="container display-6">7. Mario Kart 8 Deluxe</h6>
-              <img src = "images/mario_kart_8_deluxe.jpg" width="700" class="img-fluid" alt="image of mario kart 8 deluxe logo">
-              <hr>
-              <h6 class="container display-6">8. Portal</h6>
-              <img src = "images/portal.jpg" width="700" class="img-fluid" alt="image of portal logo">
-              <hr>
-              <h6 class="container display-6">9. Getting Over It With Bennett Foddy</h6>
-              <img src = "images/getting_over_it.jpg" width="700" class="img-fluid" alt="image of getting over it with bennett foddy logo">
-              <hr>
-              <h6 class="container display-6">10. Super Metroid</h6>
-              <img src = "images/super_metroid.jpg" width="700" class="img-fluid" alt="image of super metroid logo">
+              </div>
+              
 
+              <div class = "div-textright">
+              <h6 class="container display-6 adjust-line-height-large">3. Minecraft</h6>
+              <img src = "images/minecraft.jpg" width="700" class="img-fluid" alt="image of minecraft logo">
+              </div>
+              
+
+              <div class = "div-textleft">
+              <h6 class="container display-6 adjust-line-height-large">4. Super Mario Odyssey</h6>
+              <img src = "images/super_mario_odyssey.jpg" width="700" class="img-fluid" alt="image of super mario odyssey logo"> 
+              </div>
+              
+              <div class = "div-textright">
+              <h6 class="container display-6 adjust-line-height-large">5. Celeste</h6>
+              <img src = "images/celeste.jpg" width="700" class="img-fluid" alt="image of celeste logo">
+              </div>
+              
+              <div class = "div-textleft">
+              <h6 class="container display-6 adjust-line-height-large">6. Seterra</h6>
+              <img src = "images/seterra.jpg" width="700" class="img-fluid" alt="image of seterra logo">
+              </div>
+
+              <div class = "div-textright">
+              <h6 class="container display-6 adjust-line-height-large">7. Mario Kart 8 Deluxe</h6>
+              <img src = "images/mario_kart_8_deluxe.jpg" width="700" class="img-fluid" alt="image of mario kart 8 deluxe logo">
+              </div>
+
+              <div class = "div-textleft">
+              <h6 class="container display-6 adjust-line-height-large">8. Portal</h6>
+              <img src = "images/portal.jpg" width="700" class="img-fluid" alt="image of portal logo">
+              </div>
+
+              <div class = "div-textright">
+              <h6 class="container display-6 adjust-line-height-large">9. Getting Over It With Bennett Foddy</h6>
+              <img src = "images/getting_over_it.jpg" width="700" class="img-fluid" alt="image of getting over it with bennett foddy logo">
+              </div>
+
+              <div class = "div-textleft">
+              <h6 class="container display-6 adjust-line-height-large">10. Super Metroid</h6>
+              <img src = "images/super_metroid.jpg" width="700" class="img-fluid" alt="image of super metroid logo">
+              </div>
               
             </div>
             
@@ -165,7 +222,19 @@
             
 
               <hr>
-              Game stuff
+              <div class = "div-textleft">
+                <h2>Games</h2>
+
+                <form id="game-submit">
+                  <p>Game name<input name="gamename" id="key"></p>
+                  <p>Game name2<input name="gamenamsadfasf" id="pic"></p>
+                  <!-- <p>Picture <input name="picture" type="file" accept="image/*" id="file-input"></p> -->
+                  <input type="submit">
+                </form>
+              
+                
+                
+              </div>
             </div>
 
 
@@ -176,6 +245,7 @@
           
             <hr>
             <hr>
+              
               <h1 class="container display-1">Super Meat Boy Levels</h1>
             
           
@@ -183,6 +253,7 @@
             
 
             <hr>
+            
             <p>In the first world of Super Meat Boy there are 20 levels and 1 boss fight. In order to unlock the boss fight you need to beat at least 17 of those levels.</p>
 
             <p>The main trick used to speedrun Super Meat Boy is the auto-jump glitch which can be activated as follows:</p>
@@ -1408,14 +1479,17 @@
             </div>
             
             <hr>
+            <footer>
             <a href="#top">Back to top of page</a>
+            </footer>
             <hr>
           
           </div>
         </div>
       </div>
       <script src="clientserver.js"></script>
-      <script src="clientside.js"></script>
+      <script src="clientside.js"></script> 
+      
   </body>
 
 
