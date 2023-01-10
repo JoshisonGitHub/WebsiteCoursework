@@ -21,15 +21,18 @@ const games = require(gdb);
 
 
 app.post("/game/new", function (req, resp) {
-    console.log("hi");
-    const key = req.body.key;
-    console.log(key);
-    const picture = req.body.pic;
+    const key = req.body.gamename;
+    const description = req.body.description;
+    const picture = req.body.picture;
     console.log(picture);
-    games[key] = picture;
+    games[key] = description;
+    games[picture] = picture;
     fs.writeFileSync(gdb, JSON.stringify(games));
     resp.send(games);
 });
+
+
+
 
 
 /*
