@@ -9,76 +9,27 @@
 
     
     <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     
 
-    <!-- W3C said these were bad "error"-->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
+    <link rel="icon" type="image/x-icon" href="images/Super_Meat_Boy_cover.ico">
     <title>Speedrunning - mainpage</title>
 
     
     
-    <style id ="allstyle">
-      body { 
-        
-        background-color: rgb(79, 6, 79);
-        background-repeat: no-repeat; 
-        background-attachment: fixed;
-        background-size: cover;
-        height: auto;
-      } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */ 
-      .dropdown:hover .dropdown-menu { /* drop down hover from https://stackoverflow.com/questions/16214326/bootstrap-dropdown-with-hover */
-        display: block;
-        margin-top: 0; 
-        
-      }
-      .dropdown-item:focus, .dropdown-item:hover { /* change color from https://mdbootstrap.com/support/general/navbar-dropdown-color-scheme-and-highlighted-items/ */
-        background-color: darkred !important;
-      }
-      .btn-outline-red:hover{
-        background-color: darkred !important;
-        
-      }
-      .btn
-      {
-        color:white !important;
-        
-      }
-      video {
-        width: 100%;
-        height: auto;
-      }
-      button{
-        border: none !important;
-      }
-      .adjust-line-height {
-        line-height: 1.5em;
-      }
-      .adjust-line-height-large {
-        line-height: 2em;
-      }
-      #textleft{
-        text-align: left;
-      }
-      #textright{
-        text-align: right;
-      }
-      .div-textright{
-        text-align: right;
-      }
-      .div-textleft{
-        text-align: left;
-      }
-    </style>
+    
 
     
-    <!--End of code form stackoverflow -->
+    
   </head>
 
   
@@ -158,7 +109,7 @@
               
               <div class = "div-textright">
               <h6 class="container display-6 adjust-line-height-large">1. Subway Surfers</h6>
-              <img src = "images/subwaysurfer.png" width="700" class="img-fluid" alt="image of subway surfers logo">
+              <img src = "images/subway_surfer.png" width="700" class="img-fluid" alt="image of subway surfers logo">
               </div>
               
              
@@ -223,17 +174,22 @@
 
               <hr>
               <div class = "div-textleft">
-                <h2>Games</h2>
+                <h2>Game Data</h2>
 
-                <form id="game-submit">
-                  <p>Game Name:<input name="gamename" id="key"></p>
-                  <p>Enter Date of Post Upload:<input type="date" name="date" id="desc"></p>
-                  <p>Upload Image of Game:<input name="picture" type="file" accept="image/*" id="file"></p>
+                <form id="game-submit" autocomplete="off">
+                  <p>Game Name:<input name="gamename" id="key" list="givenames" required></p>
+                  <p>Enter Date of Post Upload:<input type="date" name="date" id="desc" required></p>
+                  <p>Image URL of Game:<input name="picture" type="url" id="file" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required placeholder="jpg/png/gif"></p>
                   <input type="submit" id ="upload-button">
                 </form>
 
+                <datalist id="givenames">
+                
+                </datalist>
 
-
+              <hr>
+              <h1 class = "container display-1 text-center">Games</h1>
+                
                 <div id="newoutput"></div>
                 
               </div>

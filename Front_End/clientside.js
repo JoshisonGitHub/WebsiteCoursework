@@ -165,7 +165,7 @@ function base_page(){
 
 function game_archive(){
 
-    document.body.style.backgroundImage = "url(images/hollowknightbackground.jpg"
+    document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg"
 
     y = document.getElementById("gamearchive");
     y.style.display = "block";
@@ -176,7 +176,7 @@ function game_archive(){
 
 function levels(){
 
-    document.body.style.backgroundImage = "url(images/smbgif.gif)"
+    document.body.style.backgroundImage = "url(images/smb_gif.gif)"
 
     y = document.getElementById("levels");
     y.style.display = "block";
@@ -186,7 +186,7 @@ function levels(){
 
 function bosses(){
 
-    document.body.style.backgroundImage = "url(images/smbgif.gif)"
+    document.body.style.backgroundImage = "url(images/smb_gif.gif)"
 
     y = document.getElementById("bosses");
     y.style.display = "block";
@@ -196,7 +196,7 @@ function bosses(){
 
 function showcase(){
 
-    document.body.style.backgroundImage = "url(images/smbbackground2.jpg)"
+    document.body.style.backgroundImage = "url(images/smb_background_2.jpg)"
 
     y = document.getElementById("showcase");
     y.style.display = "block";

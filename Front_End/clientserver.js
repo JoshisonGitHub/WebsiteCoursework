@@ -11,7 +11,7 @@ let textvar = "";
  * Log the uploaded file to the console
  * @param {event} Event The file loaded event
  */
-
+/*
 function logFile (event) {
   let str = event.target.result;
   
@@ -23,12 +23,12 @@ function logFile (event) {
   //console.log(appnew);
   
 }
-
+*/
 /**
  * Handle submit events
  * @param  {Event} event The event object
  */
-
+/*
 function handleSubmit (event) {
 
   // Stop the form from reloading the page
@@ -56,11 +56,11 @@ function handleSubmit (event) {
   
 
 }
+*/
 
 
 
-
-
+/*
 // Listen for submit events
 form.addEventListener('submit', handleSubmit);
 
@@ -74,13 +74,9 @@ function readFile(file){
     fr.readAsDataURL(file);
   });
 }
-
+*/
 async function addgames() {
   
-    
-
-  
-
   const gameForm = document.getElementById('game-submit');
   //console.log("it worked");
   gameForm.addEventListener("submit", async function (event) {
@@ -90,20 +86,9 @@ async function addgames() {
     // eslint-disable-next-line no-undef
     const data = new FormData(gameForm);
     
-    
-    
-    //data.picture = base64 pic
-
     /* conversion from FormData to JSON at https://stackoverflow.com/questions/41431322/how-to-convert-formdata-html5-object-to-json */
     const dataJSON = JSON.stringify(Object.fromEntries(data));
 
-    //console.log(dataJSON);
-    
-    console.log(dataJSON);
-    
-    
-
-  
     /*
     // Create a new FileReader object
     const reader = new FileReader();
@@ -135,7 +120,10 @@ async function addgames() {
     });
       
     gameForm.reset();
+    listgames();
+    listgamedata();
   });
+  
 }
 
 document.addEventListener("DOMContentLoaded", addgames);
@@ -143,3 +131,65 @@ document.addEventListener("DOMContentLoaded", addgames);
 
 
 
+//-----------------------------------------------------------
+const gameListElt = document.getElementById('newoutput');
+async function listgames () {
+  const gameResponse = await fetch(endpointRoot + 'games');
+  const gameKeysText = await gameResponse.text();
+  const gameKeys = JSON.parse(gameKeysText);
+
+  const l2 = document.getElementById("givenames");
+  
+  let list = '';
+  let list2 = '';
+  for (const gameKey of gameKeys) {
+      //console.log(gameKey);
+      list += `<h2 class='game_list_item' id = "${gameKey}">${gameKey}</h2>`;
+      list2 += `<option value="${gameKey}"></option>`
+  }
+  gameListElt.innerHTML = list;
+  l2.innerHTML = list2;
+  //const listItems = document.querySelectorAll('.game_list_item');
+  
+}
+
+
+
+
+async function listgamedata () {
+  const gamedataResponse = await fetch(endpointRoot + 'game/:gamedata');
+  const gamedataKeysText = await gamedataResponse.text();
+
+  //console.log(gamedataKeysText);
+  const gamedataKeys = JSON.parse(gamedataKeysText);
+  
+  //let newlist = '';
+  for (const gamedataKey of gamedataKeys) {
+      //console.log(gamedataKey);
+      for(const newgamedata of gamedataKey){
+        //console.log(newgamedata);
+        const name = newgamedata.gamename;
+        const date = newgamedata.date;
+        const pic = newgamedata.picture;
+        //console.log(date);
+        let imgTag = '<img class = "img-fluid adjust-line-height" width="700" src="' + pic + ` "alt="Image of Game ${name}">`;
+        let dateTag = '<p class = "p-smalltext adjust-line-height">' + date + '</p>'
+        //console.log(pic);
+     
+        for(child of gameListElt.children){
+          //console.log(child);
+          if(child.id == name){
+            //console.log(child.innerHTML);
+            child.innerHTML += dateTag
+            child.innerHTML += imgTag
+          }
+        }
+      
+      }
+      
+  }
+ 
+}
+
+document.addEventListener('DOMContentLoaded', listgames);
+document.addEventListener('DOMContentLoaded', listgamedata);

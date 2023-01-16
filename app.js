@@ -31,35 +31,35 @@ app.post("/game/new", function (req, resp) {
 
     
        
+    let num = Object.keys(games).length+1;
+    //console.log(num);
     
-    
-    /*
     let gameExist = false;
     Object.keys(games).forEach(function(key) {
-      if(games[key].gamename === gamename){
-        games["game"][gamename].push({date, picture});
-        gameExist = true;
-      }
+        if(games[key].gamename === gamename){
+            //console.log(games[key].gamename);
+            Object.keys(games).forEach(function(name) {
+                console.log(games[name].gamedata[0].gamename);
+                if(games[name].gamedata[0].gamename === gamename){
+                    games[name].gamedata.push({gamename, date, picture})
+                    
+              
+                }
+            });
+            gameExist = true;
+            num--;
+        }
     });
+    //console.log(gameExist)
+    
+    
+   
+   
+   
     if(!gameExist){
-        games["game"] = {[gamename]: [{date, picture}]};
-    }
-    else {
-        
+        games["Game Number " + num] = {gamename, gamedata: [{gamename, date, picture}]};
     }
     
-    */
-   
-    if(!games["game"]){
-        games["game"] = {};
-    }
-
-    if(games["game"][gamename]){
-        games["game"][gamename].push({date, picture});
-    }
-    else {
-        games["game"][gamename] = [{date, picture}];
-    }
 
 
 
@@ -76,8 +76,17 @@ app.post("/game/new", function (req, resp) {
 
 
 app.get('/games', function (req, resp) {
-    const newname = Object.keys(games["game"]);
-    resp.send(newname);
+    const newname = [];
+    Object.keys(games).forEach(function(key) {
+        newname.push(games[key].gamename)
+    });
+    if(newname.length == 0){
+        resp.status(404).send("No Game in list");
+    }
+    else{
+        resp.send(newname);
+    }
+    
 });
 fetch("http://localhost:8090/games")
   .then(function (response) {
@@ -88,21 +97,39 @@ fetch("http://localhost:8090/games")
   });
 
 
-  app.get("/game/:gamedata", function (req, resp) {
-    const gamedata = req.params.gamename;
-    if(games["game"][gamedata]) {
+app.get("/game/:gamedata", function (req, resp) {
+    const newdata = [];
+    Object.keys(games).forEach(function(key) {
+        newdata.push(games[key].gamedata)
+    });
+
+    if(newdata.length == 0){
+        resp.status(404).send("Game not found");
+    }
+    else{
+        resp.send(newdata);
+    }
+
+    /*
+    const gamedata = Object.keys(games["game"]);
+    console.log(gamedata)
+    console.log(games["game"])
+    if(games["game"].gamedata) {
         resp.json(games["game"][gamedata]);
     }
     else {
         resp.status(404).send("Game not found");
     }
+    */
 });
+
+
 fetch("http://localhost:8090/game/:gamedata")
   .then(function (response) {
     return response.text();
   })
   .then(function (text) {
-    console.log(text);
+    //console.log(text);
   });
 
 
@@ -138,7 +165,6 @@ let testdatabase =
     }
 }
 */
-
 
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
