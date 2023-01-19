@@ -76,7 +76,7 @@ function readFile(file){
 }
 */
 async function addgames() {
-  
+
   const gameForm = document.getElementById('game-submit');
   //console.log("it worked");
   gameForm.addEventListener("submit", async function (event) {
@@ -86,8 +86,33 @@ async function addgames() {
     // eslint-disable-next-line no-undef
     const data = new FormData(gameForm);
     
+    canstring = false;
+    try {
+      const dataJSON = JSON.stringify(Object.fromEntries(data));
+      console.log("worked");
+      canstring = true;
+    } catch (e) {
+      console.log("didn't work");
+      alert("Game name or image can not be read, please try a different name / image")
+    }
+
+    if(canstring){
+      const dataJSON = JSON.stringify(Object.fromEntries(data));
+      const response = await fetch(endpointRoot + 'game/new',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: dataJSON
+    });
+      
+    gameForm.reset();
+    listgames();
+    listgamedata();
+    }
     /* conversion from FormData to JSON at https://stackoverflow.com/questions/41431322/how-to-convert-formdata-html5-object-to-json */
-    const dataJSON = JSON.stringify(Object.fromEntries(data));
+    //const dataJSON = JSON.stringify(Object.fromEntries(data));
 
     /*
     // Create a new FileReader object
@@ -110,18 +135,7 @@ async function addgames() {
     
 
     // eslint-disable-next-line no-unused-vars
-    const response = await fetch(endpointRoot + 'game/new',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: dataJSON
-    });
-      
-    gameForm.reset();
-    listgames();
-    listgamedata();
+    
   });
   
 }
@@ -193,3 +207,37 @@ async function listgamedata () {
 
 document.addEventListener('DOMContentLoaded', listgames);
 document.addEventListener('DOMContentLoaded', listgamedata);
+
+
+
+//------------------------errors------------------------
+/*
+try {
+  fetch('/basepage.html')
+  .then(response => {
+    if (!response.ok) {
+      console.log("it did something")
+      throw Error(response.statusText);
+    }
+    return response.text();
+  })
+  .then(data => {
+    console.log(data);
+    // Use the data here
+  })
+  /*
+  .catch(error => {
+    console.error(error);
+    let err = document.getElementById("error-message")
+    err.innerHTML = "Sorry, the server is disconnected. Please try again later.";
+  })*/;
+  /*
+} catch (error) {
+  console.log("fucked")
+  let err = document.getElementById("error-message")
+    err.innerHTML = "Sorry, the server is disconnected. Please try again later.";
+}
+*/
+
+
+

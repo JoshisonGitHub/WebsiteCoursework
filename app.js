@@ -1,94 +1,68 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 8090;
 
-
-
 app.use(express.json());
-const path = require("path");
-app.use(express.static(path.join(__dirname, "Front_End")));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'Front_End')));
 
-
-
-app.get("/", (req, res)=>{
-    res.redirect("basepage.html");
+app.get('/', (req, res) => {
+    res.redirect('basepage.html');
 });
 
-
-const fs = require("fs");
-const gdb = "./gamedatabase.json";
+const fs = require('fs');
+// const { Server } = require('http');
+const gdb = './gamedatabase.json';
 const games = require(gdb);
-//const game = {};
+// const game = {};
 
-app.post("/game/new", function (req, resp) {
+app.post('/game/new', function (req, resp) {
     const gamename = req.body.gamename;
     const date = req.body.date;
     const picture = req.body.picture;
 
-    
-    //console.log(picture);
-    
+    // console.log(picture);
 
-    
-       
-    let num = Object.keys(games).length+1;
-    //console.log(num);
-    
+    let num = Object.keys(games).length + 1;
+    // console.log(num);
+
     let gameExist = false;
-    Object.keys(games).forEach(function(key) {
-        if(games[key].gamename === gamename){
-            //console.log(games[key].gamename);
-            Object.keys(games).forEach(function(name) {
+    Object.keys(games).forEach(function (key) {
+        if (games[key].gamename === gamename) {
+            // console.log(games[key].gamename);
+            Object.keys(games).forEach(function (name) {
                 console.log(games[name].gamedata[0].gamename);
-                if(games[name].gamedata[0].gamename === gamename){
-                    games[name].gamedata.push({gamename, date, picture})
-                    
-              
+                if (games[name].gamedata[0].gamename === gamename) {
+                    games[name].gamedata.push({ gamename, date, picture });
                 }
             });
             gameExist = true;
             num--;
         }
     });
-    //console.log(gameExist)
-    
-    
-   
-   
-   
-    if(!gameExist){
-        games["Game Number " + num] = {gamename, gamedata: [{gamename, date, picture}]};
+    // console.log(gameExist)
+
+    if (!gameExist) {
+        games['Game Number ' + num] = { gamename, gamedata: [{ gamename, date, picture }] };
     }
-    
-
-
-
 
     fs.writeFileSync(gdb, JSON.stringify(games));
     resp.send(games);
 });
 
-
-
-
-
-
-
-
 app.get('/games', function (req, resp) {
     const newname = [];
-    Object.keys(games).forEach(function(key) {
-        newname.push(games[key].gamename)
+    Object.keys(games).forEach(function (key) {
+        newname.push(games[key].gamename);
     });
-    if(newname.length == 0){
-        resp.status(404).send("No Game in list");
-    }
-    else{
+    if (newname.length === 0) {
+        resp.status(404).send('No Game in list');
+    } else {
         resp.send(newname);
     }
-    
 });
-fetch("http://localhost:8090/games")
+
+fetch('http://localhost:8090/games')
   .then(function (response) {
     return response.text();
   })
@@ -96,17 +70,15 @@ fetch("http://localhost:8090/games")
     console.log(text);
   });
 
-
-app.get("/game/:gamedata", function (req, resp) {
+app.get('/game/:gamedata', function (req, resp) {
     const newdata = [];
-    Object.keys(games).forEach(function(key) {
-        newdata.push(games[key].gamedata)
+    Object.keys(games).forEach(function (key) {
+        newdata.push(games[key].gamedata);
     });
 
-    if(newdata.length == 0){
-        resp.status(404).send("Game not found");
-    }
-    else{
+    if (newdata.length === 0) {
+        resp.status(404).send('Game not found');
+    } else {
         resp.send(newdata);
     }
 
@@ -123,23 +95,21 @@ app.get("/game/:gamedata", function (req, resp) {
     */
 });
 
-
-fetch("http://localhost:8090/game/:gamedata")
+fetch('http://localhost:8090/game/:gamedata')
   .then(function (response) {
     return response.text();
   })
   .then(function (text) {
-    //console.log(text);
+    // console.log(text);
   });
 
-
 /*
-let testdatabase = 
+let testdatabase =
 {
 
-    "games": 
+    "games":
     {
-        "gamename": 
+        "gamename":
         [
             {
                 date: "2003-01-20",
@@ -161,7 +131,7 @@ let testdatabase =
                 picture: "base64pic2"
             }
         ]
-        
+
     }
 }
 */
@@ -170,6 +140,27 @@ app.listen(port, () => {
     console.log(`server running on port ${port}`);
 });
 
+/*
+try {
+    app.listen(port, () => {
+        console.log(`server running on port ${port}`);
+    });
+} catch (err) {
+
+    console.log("stinky did not work")
+    document.getElementById("demo").innerHTML = err.message;
+}
+*/
+
+/*
+var http = require("http");
+
+     http.get({host: "basepage.html"}, function(res){
+    if( res.statusCode == 200 )
+   console.log("This site is up and running!");
+ else
+   console.log("This site might be down "+res.statusCode);
+   });
+*/
 
 module.exports = app;
-

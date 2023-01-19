@@ -165,7 +165,7 @@ function base_page(){
 
 function game_archive(){
 
-    document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg"
+    document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg)"
 
     y = document.getElementById("gamearchive");
     y.style.display = "block";
@@ -203,5 +203,14 @@ function showcase(){
     cur = "showcase"
     disable_rest(cur);
 }
+
+
+var input = document.getElementById("file");
+  input.addEventListener("blur", function(){
+    //code from Chat gpt
+    if(!this.value.match(/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]+\.(jpg|png|gif))$/)){
+      alert("Not a valid URL. Please enter a valid URL of type .jpg/.png/.gif");
+    }
+  });
 
 
