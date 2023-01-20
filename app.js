@@ -61,7 +61,7 @@ app.get('/games', function (req, resp) {
         resp.send(newname);
     }
 });
-
+/*
 fetch('http://localhost:8090/games')
   .then(function (response) {
     return response.text();
@@ -69,7 +69,7 @@ fetch('http://localhost:8090/games')
   .then(function (text) {
     console.log(text);
   });
-
+*/
 app.get('/game/:gamedata', function (req, resp) {
     const newdata = [];
     Object.keys(games).forEach(function (key) {
@@ -94,7 +94,7 @@ app.get('/game/:gamedata', function (req, resp) {
     }
     */
 });
-
+/*
 fetch('http://localhost:8090/game/:gamedata')
   .then(function (response) {
     return response.text();
@@ -102,7 +102,7 @@ fetch('http://localhost:8090/game/:gamedata')
   .then(function (text) {
     // console.log(text);
   });
-
+*/
 /*
 let testdatabase =
 {
@@ -135,7 +135,7 @@ let testdatabase =
     }
 }
 */
-
+/*
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 });

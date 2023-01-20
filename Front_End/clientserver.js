@@ -95,22 +95,29 @@ async function addgames() {
       console.log("didn't work");
       alert("Game name or image can not be read, please try a different name / image")
     }
-
-    if(canstring){
-      const dataJSON = JSON.stringify(Object.fromEntries(data));
-      const response = await fetch(endpointRoot + 'game/new',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: dataJSON
-    });
+    try {
+      if(canstring){
+        const dataJSON = JSON.stringify(Object.fromEntries(data));
+        const response = await fetch(endpointRoot + 'game/new',
+        
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: dataJSON
+      });
+        
+      gameForm.reset();
+      listgames();
+      listgamedata();
       
-    gameForm.reset();
-    listgames();
-    listgamedata();
+      }
+    } catch (error) {
+      errormessageon();
+      console.log("no server");
     }
+    
     /* conversion from FormData to JSON at https://stackoverflow.com/questions/41431322/how-to-convert-formdata-html5-object-to-json */
     //const dataJSON = JSON.stringify(Object.fromEntries(data));
 

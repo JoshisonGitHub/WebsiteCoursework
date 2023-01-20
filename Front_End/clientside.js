@@ -126,19 +126,11 @@ function b5(){
 
 
 
-
-
-
-
-
-
-
-
-
-
 var curactive = 1;
 var y = document.getElementById("basepage")
 const pages = ["basepage", "gamearchive", "levels", "bosses", "showcase"]
+
+var vid = document.getElementById("smb video");
 
 function disable_rest(cur){
     
@@ -148,6 +140,7 @@ function disable_rest(cur){
             y.style.display = "none";
         }
     }
+    
     
 }
 
@@ -164,7 +157,8 @@ function base_page(){
 }
 
 function game_archive(){
-
+    
+    errormessageoff();
     document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg)"
 
     y = document.getElementById("gamearchive");
@@ -175,13 +169,15 @@ function game_archive(){
 
 
 function levels(){
-
+    
+    
     document.body.style.backgroundImage = "url(images/smb_gif.gif)"
 
     y = document.getElementById("levels");
     y.style.display = "block";
     cur = "levels"
     disable_rest(cur);
+    
 }
 
 function bosses(){
@@ -195,13 +191,36 @@ function bosses(){
 }
 
 function showcase(){
+    
 
-    document.body.style.backgroundImage = "url(images/smb_background_2.jpg)"
+    document.body.style.backgroundImage = "url(images/smb_background.jpg)"
 
     y = document.getElementById("showcase");
     y.style.display = "block";
     cur = "showcase"
     disable_rest(cur);
+
+    var video = document.getElementById("smb video");
+
+    video.addEventListener('loadeddata', (e) => {
+        //Video should now be loaded but we can add a second check
+     
+        if(video.readyState >= 3){
+            //your code goes here
+            console.log("it did the thing")
+        }
+     
+    });
+}
+
+function errormessageon(){
+    document.getElementById("error-page").style.display = "block";
+    
+}
+
+function errormessageoff(){
+    document.getElementById("error-page").style.display = "none";
+    
 }
 
 
@@ -212,7 +231,4 @@ var input = document.getElementById("file");
       alert("Not a valid URL. Please enter a valid URL of type .jpg/.png/.gif");
     }
   });
-
-//comment  
-
 
