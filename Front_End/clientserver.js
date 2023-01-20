@@ -89,7 +89,7 @@ async function addgames() {
     canstring = false;
     try {
       const dataJSON = JSON.stringify(Object.fromEntries(data));
-      console.log("worked");
+      //console.log("worked");
       canstring = true;
     } catch (e) {
       console.log("didn't work");
@@ -189,7 +189,7 @@ async function listgamedata () {
       //console.log(gamedataKey);
       for(const newgamedata of gamedataKey){
         //console.log(newgamedata);
-        const name = newgamedata.gamename;
+        const name = newgamedata.key;
         const date = newgamedata.date;
         const pic = newgamedata.picture;
         //console.log(date);

@@ -68,6 +68,14 @@ describe('Test the game service', () => {
         .send(params)
 	    .expect(200);
     });
+
+    test('POST /game/new', () => {
+        const params = { gamename: 'Jest Test', date: '2023-01-18', picture: 'https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png' };
+        return request(app)
+        .post('/game/new')
+        .send(params)
+	    .expect(200);
+    });
     
    //done();
 });

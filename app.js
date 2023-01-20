@@ -27,13 +27,13 @@ app.post('/game/new', function (req, resp) {
     // console.log(num);
 
     let gameExist = false;
-    Object.keys(games).forEach(function (key) {
-        if (games[key].gamename === gamename) {
+    Object.keys(games).forEach(function (curkey) {
+        if (games[curkey].gamename === gamename) {
             // console.log(games[key].gamename);
             Object.keys(games).forEach(function (name) {
-                console.log(games[name].gamedata[0].gamename);
-                if (games[name].gamedata[0].gamename === gamename) {
-                    games[name].gamedata.push({ gamename, date, picture });
+                console.log(games[name].gamedata[0].key);
+                if (games[name].gamedata[0].key === gamename) {
+                    games[name].gamedata.push({ key: gamename, date, picture });
                 }
             });
             gameExist = true;
@@ -43,7 +43,7 @@ app.post('/game/new', function (req, resp) {
     // console.log(gameExist)
 
     if (!gameExist) {
-        games['Game Number ' + num] = { gamename, gamedata: [{ gamename, date, picture }] };
+        games['Game Number ' + num] = { gamename, gamedata: [{ key: gamename, date, picture }] };
     }
 
     fs.writeFileSync(gdb, JSON.stringify(games));
@@ -72,8 +72,8 @@ fetch('http://localhost:8090/games')
 */
 app.get('/game/:gamedata', function (req, resp) {
     const newdata = [];
-    Object.keys(games).forEach(function (key) {
-        newdata.push(games[key].gamedata);
+    Object.keys(games).forEach(function (curkey) {
+        newdata.push(games[curkey].gamedata);
     });
 
     if (newdata.length === 0) {
