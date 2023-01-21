@@ -187,9 +187,9 @@ async function listpostdata () {
       //console.log(searchEles);
       //console.log(searchEles.length);
       for(var i = 0; i < searchEles.length; i++) {
-        console.log(searchEles[i].id);
+        //console.log(searchEles[i].id);
         if(searchEles[i].id == name) {
-          console.log("test success");
+          //console.log("test success");
           searchEles[i].innerHTML += dateTag
           searchEles[i].innerHTML += imgTag
         }
@@ -198,7 +198,7 @@ async function listpostdata () {
     }
       
   }
- console.log(gameListElt);
+ //console.log(gameListElt);
 }
 
 async function listgamedata(){
@@ -219,8 +219,11 @@ async function listgamedata(){
   let list2 = '';
   let list3 = '';
   
+  let temp2 = [];
+  
   for(const platformKey of platformKeys){
     let temp = '';
+    let temp3 = [];
     for(const newplatformdata of platformKey){
       //console.log(newplatformdata)
       //console.log(newplatformdata.gamename);
@@ -230,17 +233,38 @@ async function listgamedata(){
 
       list += `<h2 class='game_list_item' id = "${name}">${name}</h2>`;
       list2 += `<option value="${name}"></option>`
-      
-      for (platform of platforms){
-        temp += platform + ', ';
+      var canadd = true;
+      var canadd2 = true;
+      for (plat of platforms){
+        for(i=0; i<temp3.length; i++){
+          if(temp3[i] == plat){
+            canadd2 = false;
+          }
+        }
+        if(canadd2){
+          temp += plat + ', ';
+          temp3.push(plat);
+        }
         
-        list3 += `<option value="${platform}"></option>`
+        
+        for(i=0; i<temp2.length; i++){
+          if(temp2[i] == plat){
+            canadd = false;
+          }
+        }
+        if(canadd){
+          list3 += `<option value="${plat}"></option>`
+          temp2.push(plat);
+        }
+        
       }
+      
     }
     list += '<h5 class = "adjust-line-height">' +'Platforms Played On: ' + temp + '</h5>'
     
   }
-  
+  console.log(list3);
+  console.log(typeof(list3));
   gameListElt.innerHTML = list;
   l2.innerHTML = list2;
   l3.innerHTML = list3;
