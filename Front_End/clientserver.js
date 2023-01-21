@@ -109,8 +109,8 @@ async function addgames() {
       });
         
       gameForm.reset();
-      listgames();
       listgamedata();
+      listpostdata();
       
       }
     } catch (error) {
@@ -118,30 +118,7 @@ async function addgames() {
       console.log("no server");
     }
     
-    /* conversion from FormData to JSON at https://stackoverflow.com/questions/41431322/how-to-convert-formdata-html5-object-to-json */
-    //const dataJSON = JSON.stringify(Object.fromEntries(data));
 
-    /*
-    // Create a new FileReader object
-    const reader = new FileReader();
-
-    // Add an event listener for when the file is fully loaded
-    reader.addEventListener('load', () => { 
-      // The result of the file reader is a data URL
-      // which can be used to create an image
-      const base64Image = reader.result;
- 
-      list.picture = base64Image;
-    });
-    
-    // Read the file as a data URL
-    // this breaks it
-    reader.readAsDataURL(list.picture);
-    */
-    
-    
-
-    // eslint-disable-next-line no-unused-vars
     
   });
   
@@ -154,12 +131,16 @@ document.addEventListener("DOMContentLoaded", addgames);
 
 //-----------------------------------------------------------
 const gameListElt = document.getElementById('newoutput');
+
 async function listgames () {
   const gameResponse = await fetch(endpointRoot + 'games');
   const gameKeysText = await gameResponse.text();
   const gameKeys = JSON.parse(gameKeysText);
+  
+  
 
   const l2 = document.getElementById("givenames");
+  
   
   let list = '';
   let list2 = '';
@@ -177,74 +158,112 @@ async function listgames () {
 
 
 
-async function listgamedata () {
-  const gamedataResponse = await fetch(endpointRoot + 'game/:gamedata');
-  const gamedataKeysText = await gamedataResponse.text();
+async function listpostdata () {
+  const postdataResponse = await fetch(endpointRoot + 'postdata');
+  const postdataKeysText = await postdataResponse.text();
 
-  //console.log(gamedataKeysText);
-  const gamedataKeys = JSON.parse(gamedataKeysText);
+  console.log(postdataKeysText);
+  const postdataKeys = JSON.parse(postdataKeysText);
   
   //let newlist = '';
-  for (const gamedataKey of gamedataKeys) {
-      //console.log(gamedataKey);
-      for(const newgamedata of gamedataKey){
+  for (const postdataKey of postdataKeys) {
+      //console.log(postdataKey);
+      for(const newpostdata of postdataKey){
         //console.log(newgamedata);
-        const name = newgamedata.key;
-        const date = newgamedata.date;
-        const pic = newgamedata.picture;
-        //console.log(date);
-        let imgTag = '<img class = "img-fluid adjust-line-height" width="700" src="' + pic + ` "alt="Image of Game ${name}">`;
-        let dateTag = '<p class = "p-smalltext adjust-line-height">' + date + '</p>'
+        const name = newpostdata.key;
+        const date = newpostdata.date;
+        const pic = newpostdata.picture;
+        //console.log(name);
+        
+        let imgTag = ' <img class = "img-fluid adjust-line-height" width="700" src="' + pic + ` "alt="Image of Game ${name}">`;
+        let dateTag = ' <p class = "p-smalltext adjust-line-height">' + date + '</p>'
         //console.log(pic);
-     
-        for(child of gameListElt.children){
-          //console.log(child);
-          if(child.id == name){
-            //console.log(child.innerHTML);
-            child.innerHTML += dateTag
-            child.innerHTML += imgTag
+        //console.log(imgTag);
+        console.log(gameListElt);
+        console.log(gameListElt.children);
+
+        //var matches = [];
+        var searchEles = document.getElementById("newoutput").children;
+        console.log(searchEles);
+        console.log(searchEles.length);
+        for(var i = 0; i < searchEles.length; i++) {
+          console.log(searchEles[i].id);
+          if(searchEles[i].id == name) {
+            console.log("test success");
+            searchEles[i].innerHTML += dateTag
+            searchEles[i].innerHTML += imgTag
           }
         }
+        /*
+        for(child of gameListElt.children){
+          //console.log(child);
+          console.log(child.id);
+          if(child.id == name){
+            console.log("is the same");
+            //child.innerHTML += "this is a test";
+            child.append(dateTag);
+            child.append(imgTag);
+            //child.innerHTML += dateTag
+            //child.innerHTML += imgTag
+            console.log(child);
+          }
+        }
+        */
       
       }
       
   }
- 
+ console.log(gameListElt);
 }
 
-document.addEventListener('DOMContentLoaded', listgames);
-document.addEventListener('DOMContentLoaded', listgamedata);
+async function listgamedata(){
+  const platformResponse = await fetch(endpointRoot + 'game/:gamedata');
+  const platformKeysText = await platformResponse.text();
+  
 
 
+  const platformKeys = JSON.parse(platformKeysText);
+  //console.log("PlatformKeys");
+  //console.log(platformKeys);
 
-//------------------------errors------------------------
-/*
-try {
-  fetch('/basepage.html')
-  .then(response => {
-    if (!response.ok) {
-      console.log("it did something")
-      throw Error(response.statusText);
+
+  const l2 = document.getElementById("givenames");
+  const l3 = document.getElementById("givenplatforms");
+
+  let list = '';
+  let list2 = '';
+  let list3 = '';
+  
+  for(const platformKey of platformKeys){
+    let temp = '';
+    for(const newplatformdata of platformKey){
+      //console.log(newplatformdata)
+      //console.log(newplatformdata.gamename);
+
+      const name = newplatformdata.gamename;
+      const platforms = newplatformdata.platform_played_on;
+
+      list += `<h2 class='game_list_item' id = "${name}">${name}</h2>`;
+      list2 += `<option value="${name}"></option>`
+      
+      for (platform of platforms){
+        temp += platform + ', ';
+        
+        list3 += `<option value="${platform}"></option>`
+      }
     }
-    return response.text();
-  })
-  .then(data => {
-    console.log(data);
-    // Use the data here
-  })
-  /*
-  .catch(error => {
-    console.error(error);
-    let err = document.getElementById("error-message")
-    err.innerHTML = "Sorry, the server is disconnected. Please try again later.";
-  })*/;
-  /*
-} catch (error) {
-  console.log("fucked")
-  let err = document.getElementById("error-message")
-    err.innerHTML = "Sorry, the server is disconnected. Please try again later.";
+    list += '<h5 class = "adjust-line-height">' +'Platforms Played On: ' + temp + '</h5>'
+    
+  }
+  
+  gameListElt.innerHTML = list;
+  l2.innerHTML = list2;
+  l3.innerHTML = list3;
+  //console.log("gameListElt");
+  //console.log(gameListElt);
 }
-*/
 
+//document.addEventListener('DOMContentLoaded', listgames);
 
-
+document.addEventListener('DOMContentLoaded', listgamedata);
+document.addEventListener('DOMContentLoaded', listpostdata);

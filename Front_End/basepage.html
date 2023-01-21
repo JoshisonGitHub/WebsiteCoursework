@@ -188,13 +188,17 @@
 
                 <form id="game-submit" autocomplete="off">
                   <p>Game Name:<input name="gamename" id="key" list="givenames" required></p>
-                  <p>Enter Date of Post Upload:<input type="date" name="date" id="desc" required></p>
+                  <p>Platform Played on:<input name="platform" id="plat" list="givenplatforms" required></p>
+                  <p>Date of Post Upload:<input type="date" name="date" id="desc" required></p>
                   <p>Image URL of Game:<input name="picture" type="url" id="file" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required placeholder="jpg/png/gif"></p>
                   <input type="submit" id ="upload-button">
                 </form>
                 
 
                 <datalist id="givenames">
+                
+                </datalist>
+                <datalist id="givenplatforms">
                 
                 </datalist>
                 <div id="error-page" style="display: block;"><h3><span class= "bg-dark adjust-line-height">
