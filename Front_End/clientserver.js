@@ -1,7 +1,7 @@
 const endpointRoot = "http://127.0.0.1:8090/";
 
 
-// Get the form and file field
+
 let form = document.querySelector('#game-submit');
 let file = document.querySelector('#file');
 let appnew = document.querySelector('#newoutput');
@@ -162,55 +162,40 @@ async function listpostdata () {
   const postdataResponse = await fetch(endpointRoot + 'postdata');
   const postdataKeysText = await postdataResponse.text();
 
-  console.log(postdataKeysText);
+  //console.log(postdataKeysText);
   const postdataKeys = JSON.parse(postdataKeysText);
   
   //let newlist = '';
   for (const postdataKey of postdataKeys) {
-      //console.log(postdataKey);
-      for(const newpostdata of postdataKey){
-        //console.log(newgamedata);
-        const name = newpostdata.key;
-        const date = newpostdata.date;
-        const pic = newpostdata.picture;
-        //console.log(name);
+    //console.log(postdataKey);
+    for(const newpostdata of postdataKey){
+      //console.log(newgamedata);
+      const name = newpostdata.key;
+      const date = newpostdata.date;
+      const pic = newpostdata.picture;
+      //console.log(name);
         
-        let imgTag = ' <img class = "img-fluid adjust-line-height" width="700" src="' + pic + ` "alt="Image of Game ${name}">`;
-        let dateTag = ' <p class = "p-smalltext adjust-line-height">' + date + '</p>'
-        //console.log(pic);
-        //console.log(imgTag);
-        console.log(gameListElt);
-        console.log(gameListElt.children);
+      let imgTag = ' <img class = "img-fluid adjust-line-height" width="700" src="' + pic + ` "alt="Image of Game ${name}">`;
+      let dateTag = ' <p class = "p-smalltext adjust-line-height">' + date + '</p>'
+      //console.log(pic);
+      //console.log(imgTag);
+      //console.log(gameListElt);
+      //console.log(gameListElt.children);
 
-        //var matches = [];
-        var searchEles = document.getElementById("newoutput").children;
-        console.log(searchEles);
-        console.log(searchEles.length);
-        for(var i = 0; i < searchEles.length; i++) {
-          console.log(searchEles[i].id);
-          if(searchEles[i].id == name) {
-            console.log("test success");
-            searchEles[i].innerHTML += dateTag
-            searchEles[i].innerHTML += imgTag
-          }
+      //var matches = [];
+      var searchEles = document.getElementById("newoutput").children;
+      //console.log(searchEles);
+      //console.log(searchEles.length);
+      for(var i = 0; i < searchEles.length; i++) {
+        console.log(searchEles[i].id);
+        if(searchEles[i].id == name) {
+          console.log("test success");
+          searchEles[i].innerHTML += dateTag
+          searchEles[i].innerHTML += imgTag
         }
-        /*
-        for(child of gameListElt.children){
-          //console.log(child);
-          console.log(child.id);
-          if(child.id == name){
-            console.log("is the same");
-            //child.innerHTML += "this is a test";
-            child.append(dateTag);
-            child.append(imgTag);
-            //child.innerHTML += dateTag
-            //child.innerHTML += imgTag
-            console.log(child);
-          }
-        }
-        */
-      
       }
+      
+    }
       
   }
  console.log(gameListElt);
