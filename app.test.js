@@ -75,32 +75,12 @@ describe('Test the game service', () => {
 	    .get('/postdata')
 	    .expect(/2023-01-21/);
     });
-    //must fix
-    /*
-    test('GET /game/:gamedata includes https://www.gamespot.com/a/uploads/original/1575/15759911/3780132-desktopscreenshot2020.12.22-10.12.38.37.png', () => {
-        return request(app)
-	    .get('/game/:gamedata')
-	    .expect(/https://www.gamespot.com/a/uploads/original/1575/15759911/3780132-desktopscreenshot2020.12.22-10.12.38.37.png/);
-    });
-    */
-    //gamedata: [{gamename, platform_played_on: [platform]}], postdata: [{ key: gamename, date, picture }]
+
     test('POST /game/new', () => {
-        const params = { gamename: 'Jest Test', platform_played_on: ['PC'], key: 'Jest Test', date: '2023-01-18', picture: 'https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png' };
+        const params = { gamename: 'Jest Test', key: 'Jest Test', date: '2023-01-18', picture: 'https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png' };
         return request(app)
         .post('/game/new')
         .send(params)
 	    .expect(200);
     });
-
-    /*
-    var thing = "https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png"
-    test('GET /game/new', () => {
-        const params = { gamename: 'Jest Test', date: '2023-01-18', picture: 'https://miro.medium.com/max/300/1*veOyRtKTPeoqC_VlWNUc5Q.png' };
-        return request(app)
-        .post('/game/new')
-        .send(params)
-	    .expect(/${thing} /);
-    });
-    */
-   //done();
 });
