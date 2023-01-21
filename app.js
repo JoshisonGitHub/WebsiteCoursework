@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 8090;
 
 app.use(express.json());
 const path = require('path');
@@ -45,7 +44,7 @@ app.post('/game/new', function (req, resp) {
     // console.log(gameExist)
 
     if (!gameExist) {
-        games['Game Number ' + num] = { gamedata: [{gamename, platform_played_on: [platform]}], postdata: [{ key: gamename, date, picture }] };
+        games['Game Number ' + num] = { gamedata: [{ gamename, platform_played_on: [platform] }], postdata: [{ key: gamename, date, picture }] };
     }
 
     fs.writeFileSync(gdb, JSON.stringify(games));
@@ -55,7 +54,6 @@ app.post('/game/new', function (req, resp) {
 app.get('/games', function (req, resp) {
     const newname = [];
     Object.keys(games).forEach(function (curkey) {
-        
         newname.push(games[curkey].gamedata[0].gamename);
     });
     if (newname.length === 0) {
@@ -63,40 +61,36 @@ app.get('/games', function (req, resp) {
     } else {
         resp.send(newname);
     }
-    //console.log("/games")
-    //console.log(newname);
+    // console.log("/games")
+    // console.log(newname);
 });
 
 app.get('/game/:gamedata', function (req, resp) {
     const newgamedata = [];
     Object.keys(games).forEach(function (curkey) {
         newgamedata.push(games[curkey].gamedata);
-        
     });
     if (newgamedata.length === 0) {
         resp.status(404).send('No data in list');
     } else {
         resp.send(newgamedata);
     }
-    //console.log("/gamedata");
-    //console.log(newgamedata);
-    
+    // console.log("/gamedata");
+    // console.log(newgamedata);
 });
 
 app.get('/postdata', function (req, resp) {
     const newgamedata = [];
     Object.keys(games).forEach(function (curkey) {
         newgamedata.push(games[curkey].postdata);
-        
     });
     if (newgamedata.length === 0) {
         resp.status(404).send('No data in list');
     } else {
         resp.send(newgamedata);
     }
-    //console.log("/postdata");
-    //console.log(newgamedata);
-    
+    // console.log("/postdata");
+    // console.log(newgamedata);
 });
 
 /*
@@ -109,25 +103,6 @@ fetch('http://localhost:8090/games')
   });
 */
 /*
-app.get('/game/postdata', function (req, resp) {
-    const curdata = [];
-    console.log("did run");
-    Object.keys(games).forEach(function (curkey) {
-        curdata.push(games[curkey].postdata);
-        console.log(games[curkey].postdata);
-    });
-
-    if (curdata.length === 0) {
-        resp.status(404).send('Game not found');
-    } else {
-        resp.send(curdata);
-    }
-    console.log("/game/postdata")
-    console.log(curdata);
-   
-});
-*/
-/*
 fetch('http://localhost:8090/game/:postdata')
   .then(function (response) {
     return response.text();
@@ -137,63 +112,8 @@ fetch('http://localhost:8090/game/:postdata')
   });
 */
 /*
-let testdatabase =
-{
-
-    "games":
-    {
-        "gamename":
-        [
-            {
-                date: "2003-01-20",
-                picture: "base64pic"
-            },
-            {
-                date: "200-04-10",
-                picture: "base64pic2"
-            }
-        ],
-        "different gamename":
-        [
-            {
-                date: "2013-11-22",
-                picture: "base64pic"
-            },
-            {
-                date: "200-04-10",
-                picture: "base64pic2"
-            }
-        ]
-
-    }
-}
-*/
-/*
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 });
-
-/*
-try {
-    app.listen(port, () => {
-        console.log(`server running on port ${port}`);
-    });
-} catch (err) {
-
-    console.log("stinky did not work")
-    document.getElementById("demo").innerHTML = err.message;
-}
 */
-
-/*
-var http = require("http");
-
-     http.get({host: "basepage.html"}, function(res){
-    if( res.statusCode == 200 )
-   console.log("This site is up and running!");
- else
-   console.log("This site might be down "+res.statusCode);
-   });
-*/
-
 module.exports = app;

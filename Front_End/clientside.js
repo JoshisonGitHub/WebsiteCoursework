@@ -144,6 +144,9 @@ function disable_rest(cur){
     
 }
 
+var vid = 1;
+var vidloaded = false;
+
 function base_page(){
 
     //how to change background image sourced from https://stackoverflow.com/questions/21496905/how-to-change-the-background-image-of-div-using-javascript
@@ -154,6 +157,12 @@ function base_page(){
     y.style.display = "block";
     cur = "basepage"
     disable_rest(cur);
+
+    if(vidloaded){
+        if(!vid.paused){
+            vid.pause();
+        }
+    }
 }
 
 function game_archive(){
@@ -165,6 +174,12 @@ function game_archive(){
     y.style.display = "block";
     cur = "gamearchive"
     disable_rest(cur);
+
+    if(vidloaded){
+        if(!vid.paused){
+            vid.pause();
+        }
+    }
 }
 
 
@@ -177,6 +192,12 @@ function levels(){
     y.style.display = "block";
     cur = "levels"
     disable_rest(cur);
+
+    if(vidloaded){
+        if(!vid.paused){
+            vid.pause();
+        }
+    }
     
 }
 
@@ -188,7 +209,21 @@ function bosses(){
     y.style.display = "block";
     cur = "bosses"
     disable_rest(cur);
+
+    if(vidloaded){
+        if(!vid.paused){
+            vid.pause();
+        }
+    }
+
+    if(vidloaded){
+        if(!vid.paused){
+            vid.pause();
+        }
+    }
+
 }
+
 
 function showcase(){
     
@@ -200,17 +235,10 @@ function showcase(){
     cur = "showcase"
     disable_rest(cur);
 
-    var video = document.getElementById("smb video");
+    
+    vidloaded = true;
+    vid = document.getElementById("video test");
 
-    video.addEventListener('loadeddata', (e) => {
-        //Video should now be loaded but we can add a second check
-     
-        if(video.readyState >= 3){
-            //your code goes here
-            console.log("it did the thing")
-        }
-     
-    });
 }
 
 function errormessageon(){
