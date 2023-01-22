@@ -4,7 +4,7 @@
   "description": "",
   "main": "basepage.html",
   "scripts": {
-    "pretest": "eslint httpserver.js",
+    "pretest": "eslint server.js",
     "pretest2": "eslint app.js",
     "test": "jest",
     "start": "nodemon server.js"
