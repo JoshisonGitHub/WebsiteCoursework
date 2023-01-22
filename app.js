@@ -27,19 +27,20 @@ app.post('/game/new', function (req, resp) {
     // console.log(num);
 
     let gameExist = false;
+    let i = 0;
     Object.keys(games).forEach(function (curkey) {
         if (games[curkey].gamedata[0].gamename === gamename) {
             // console.log(games[key].gamename);
-            var canadd = true;
-            for(i=0;i<games[curkey].gamedata[0].platform_played_on.length; i++){
-                if(games[curkey].gamedata[0].platform_played_on[i]== platform){
+            let canadd = true;
+            for (i = 0; i < games[curkey].gamedata[0].platform_played_on.length; i++) {
+                if (games[curkey].gamedata[0].platform_played_on[i] === platform) {
                     canadd = false;
                 }
             }
-            if(canadd){
+            if (canadd) {
                 games[curkey].gamedata[0].platform_played_on.push(platform);
             }
-            //games[curkey].gamedata[0].platform_played_on.push(platform);
+            // games[curkey].gamedata[0].platform_played_on.push(platform);
             Object.keys(games).forEach(function (name) {
                 console.log(games[name].postdata[0].key);
                 if (games[name].postdata[0].key === gamename) {
