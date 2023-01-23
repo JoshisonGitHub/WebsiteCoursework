@@ -111,7 +111,7 @@ async function addgames() {
       gameForm.reset();
       listgamedata();
       listpostdata();
-      
+      errormessageoff();
       }
     } catch (error) {
       errormessageon();

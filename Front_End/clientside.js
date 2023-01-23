@@ -130,7 +130,7 @@ var curactive = 1;
 var y = document.getElementById("basepage")
 const pages = ["basepage", "gamearchive", "levels", "bosses", "showcase"]
 
-var vid = document.getElementById("smb video");
+var vid = document.getElementById("smb_video");
 
 function disable_rest(cur){
     
@@ -152,7 +152,8 @@ function base_page(){
     //how to change background image sourced from https://stackoverflow.com/questions/21496905/how-to-change-the-background-image-of-div-using-javascript
     document.body.style.backgroundImage = "none"
     document.body.style.backgroundColor= "rgb(79, 6, 79)"
-    
+    document.getElementById("top").class = "text-white body_game_archive"
+
     y = document.getElementById("basepage");
     y.style.display = "block";
     cur = "basepage"
@@ -168,6 +169,7 @@ function base_page(){
 function game_archive(){
     
     errormessageoff();
+    //document.getElementById("top").class = "text-white body_game_archive"
     document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg)"
 
     y = document.getElementById("gamearchive");
@@ -237,18 +239,18 @@ function showcase(){
 
     
     vidloaded = true;
-    vid = document.getElementById("video test");
+    vid = document.getElementById("video_test");
 
 }
 
 function errormessageon(){
     document.getElementById("error-page").style.display = "block";
-    
+    //document.getElementById("error-page2").style.display = "block";
 }
 
 function errormessageoff(){
     document.getElementById("error-page").style.display = "none";
-    
+    //document.getElementById("error-page2").style.display = "none";
 }
 
 
