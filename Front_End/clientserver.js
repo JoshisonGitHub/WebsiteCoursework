@@ -263,8 +263,8 @@ async function listgamedata(){
     list += '<h5 class = "adjust-line-height">' +'Platforms Played On: ' + temp + '</h5>'
     
   }
-  console.log(list3);
-  console.log(typeof(list3));
+  //console.log(list3);
+  //console.log(typeof(list3));
   gameListElt.innerHTML = list;
   l2.innerHTML = list2;
   l3.innerHTML = list3;
