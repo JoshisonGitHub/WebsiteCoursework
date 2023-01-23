@@ -166,11 +166,15 @@ function base_page(){
     }
 }
 
+
+
 function game_archive(){
     
     errormessageoff();
-    //document.getElementById("top").class = "text-white body_game_archive"
-    document.body.style.backgroundImage = "url(images/hollow_knight_background.jpg)"
+    
+    const temp = document.getElementById("testimage").src 
+    console.log(temp);
+    document.body.style.backgroundImage = `url(${temp})`;
 
     y = document.getElementById("gamearchive");
     y.style.display = "block";
@@ -229,7 +233,7 @@ function bosses(){
 
 function showcase(){
     
-
+    
     document.body.style.backgroundImage = "url(images/smb_background.jpg)"
 
     y = document.getElementById("showcase");

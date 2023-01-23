@@ -7,12 +7,11 @@ body {
     height: auto;
     background-image: none;
 }
-/*
-#body_game_archive{
-    background-image: url(images/hollow_knight_background.jpg);
-}
-*/
-/* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+
+
+
+
 .dropdown:hover .dropdown-menu {
     /* drop down hover from https://stackoverflow.com/questions/16214326/bootstrap-dropdown-with-hover */
     display: block;
